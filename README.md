@@ -10,3 +10,6 @@ The purpose of the application is to encourage distribution of food items that m
 If you are someone who would be interested to use this system or would like to help build it, contact me for further details.
 
 Tech/tools/versions: Ruby 2.5.0 Rails 5.2.2 DB: SQLite Desployment Server: Heroku
+
+Please Use Schema Load for DB Creation as I have hard reset it
+rake db:schema:load
