@@ -21,6 +21,17 @@
     max-width:100%;
     max-height:100%;
     background: image-url("home-bg2.jpg");
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.25);
     background-blend-mode: lighten;
 } 
+
+.col-md-4x {
+    text-align: center;
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+}
+
+.home-text {
+	text-align: justify !important;
+    margin: 20px !important;
+}
