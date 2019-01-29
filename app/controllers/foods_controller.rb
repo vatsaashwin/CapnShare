@@ -1,6 +1,8 @@
 class FoodsController < ApplicationController
+  
+  before_action :authenticate_user!
   before_action :find_post, only: [:show, :download]
- 
+
   def index
     @foods = Food.order('created_at DESC')
   end

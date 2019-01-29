@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
-  #get 'pages/home'
-  root "pages#home"
+  devise_for :users, :controllers => { registrations: 'registrations' }
+  #get '/users' => 'users#user', as: :user_root # creates user_root_path
+
+  namespace :users do
+    #root 'users#user' # creates user_root_path
+    get 'users#sign_in', to: 'devise/sessions#new'
+    get 'users#sign_out' => 'devise/sessions#destroy'     
+  end
+
+  get 'pages/home'
+  #root "pages#home"
+  root :to => "pages#index"
   get 'about' => 'pages#about'
   get 'contactus' => 'pages#contactus'  
   resources :foods
