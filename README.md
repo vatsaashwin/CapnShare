@@ -11,5 +11,27 @@ If you are someone who would be interested to use this system or would like to h
 
 Tech/tools/versions: Ruby 2.5.0 Rails 5.2.2 DB: SQLite Desployment Server: Heroku
 
-Please Use Schema Load for DB Creation as I have hard reset it
-rake db:schema:load
+Running on localhost:
+
+1) sudo bundle install
+
+2) sudo bundle update
+
+3) Please Use Schema Load for DB Creation as I have hard reset it (29-Jan-2018)
+   Inital Set Up Do:
+   rake db:schema:load 
+   Otherwise
+   rails db:migrate
+
+4) Modify development.rb file Put Applications Gmail Email Credentials (Only Required in DEV/TEST)
+    user_name:      'ENTER EMAIL ID'
+    password:       'ENTER PASSWORD'
+    domain:         'HOST:PORT'
+    
+5) Step for Hashing Images location (Only Required in DEV/TEST)
+       In food.rb file,
+       Put hash_secret: "Please Add Key Here"
+       Hash_Secret can be generated using rails secret command 
+
+
+
