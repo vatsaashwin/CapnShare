@@ -16,17 +16,23 @@ class FoodsController < ApplicationController
  
   def create
     @food = Food.new(food_params)
-    if @food.save
-      redirect_to food_path(@food.id)
-    else
+    if @food.name != "" && @food.description != "" && @food.contact != ""  && @food.image.to_s != "/images/original/missing.png"          
+      if @food.save
+        redirect_to food_path(@food.id)
+        else
+        render :new
+      end  
+    else 
+      flash[:notice] = "Error in Food Posting, Some Fields Missing"
+      puts "Incorrect Posting, some fields missing"
       render :new
     end
-  end
- 
+  end  
   private
  
   def food_params
     params.require(:food).permit(:name, :description, :image, :contact)
+
   end
  
   def find_post
