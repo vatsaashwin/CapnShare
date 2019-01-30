@@ -67,11 +67,16 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true  
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    user_name:      'ENTER EMAIL ID',
-    password:       'ENTER PASSWORD',
+    user_name:      'ApplicationPlayBook@gmail.com',
+    password:       'playbook123',
     domain:         'localhost:3000',
     address:       'smtp.gmail.com',
     port:          '587',
+    # user_name:      'INSERT EMAIL HERE',
+    # password:       'ENTER PASSWORD',
+    # domain:         'ENTER URL',
+    # address:       'smtp.gmail.com',
+    # port:          '587',
     authentication: :plain,
     enable_starttls_auto: true
   }

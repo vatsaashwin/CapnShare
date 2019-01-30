@@ -1,7 +1,8 @@
 class Food < ApplicationRecord	
     has_attached_file :image,
         url: "/system/:hash.:extension",
-        hash_secret: "Please Add Key Here",
+        hash_secret: "Insert hash key here",
+        
         styles: {
                     thumb: ["300x300", :jpeg],
                     original: [:jpeg]

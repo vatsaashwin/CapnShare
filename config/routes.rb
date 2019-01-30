@@ -4,12 +4,18 @@ Rails.application.routes.draw do
 
   namespace :users do
     #root 'users#user' # creates user_root_path
-    get 'users#sign_in', to: 'devise/sessions#new'
-    get 'users#sign_out' => 'devise/sessions#destroy'     
+    # get 'users#sign_in', to: 'devise/sessions#new'
+    # get 'users#sign_out' => 'devise/sessions#destroy'     
   end
 
   get 'pages/home'
   #root "pages#home"
+  as :user do
+    get "signin" => 'devise/sessions#new'
+    delete "signout" => 'devise/sessions#destroy'
+    get 'signup' => 'devise/registrations#new'
+  end  
+  
   root :to => "pages#index"
   get 'about' => 'pages#about'
   get 'contactus' => 'pages#contactus'  
