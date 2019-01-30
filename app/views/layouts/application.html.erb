@@ -27,16 +27,15 @@
 
             <% end %>
 
-          
 
         </ul>
       </div>
     </nav>
 
-    <!--p class="notice"><%= notice %></p-->
-    <!--p class="alert"><%= alert %></p-->
+    <!-- <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
 
-  <% flash.each do |name, message| %>
+<% flash.each do |name, message| %>
       <%content_tag(:div, message, class:"alert alert-info #{name}")%>
   <% end %> 
     

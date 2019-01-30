@@ -3,22 +3,22 @@
         <div class="col-md-6">
             <%= form_for food do |f| %>
             <div>
-                <%= f.label :name %>
-                <%= f.text_field :name %>
+                <p><b><%= f.label :name %></b></p>
+                <p><%= f.text_field :name %></p>
             </div> 
             <div>
-                <%= f.label :description %>
-                <%= f.text_area :description %>
+                <p><b><%= f.label :description %></b></p>
+                <p><%= f.text_area :description %></p>
             </div> 
             <div>
-                <%= f.label :image %>
-                <%= f.file_field :image %>
+                <p><b><%= f.label :image %></b></p>
+                <p><%= f.file_field :image %></p>
             </div>
             <div>
-                <%= f.label :email %>
-                <%= f.text_field :contact %>
+                <p><b><%= f.label :email %></b></p>
+                <p><%= f.text_field :contact %></p>
             </div> 
-            <%= f.submit %>
+            <%= f.submit "Add Listing", class: "btn btn-secondary" %>
             <% end %>
         </div>              
     </div>
