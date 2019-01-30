@@ -9,14 +9,14 @@ Rails.application.routes.draw do
   end
 
   get 'pages/home'
-  #root "pages#home"
+  root "pages#home"
   as :user do
     get "signin" => 'devise/sessions#new'
     delete "signout" => 'devise/sessions#destroy'
     get 'signup' => 'devise/registrations#new'
   end  
   
-  root :to => "pages#index"
+  # root :to => "pages#index"
   get 'about' => 'pages#about'
   get 'contactus' => 'pages#contactus'  
   resources :foods
