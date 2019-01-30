@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
  
   before_action :set_cache_headers
-  before_action :authenticate_user!,except:[:index,:about,:contactus] 
+  before_action :authenticate_user!,except:[:home] 
   
   protect_from_forgery
 
