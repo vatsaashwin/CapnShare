@@ -1,0 +1,91 @@
+ <% if user_signed_in? %>
+    <div class="jumbotron jumbotron-home">
+            <div class="container">
+                <h1></h1>
+            </div>
+    </div>
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-4x">
+                <h2>Share</h2>
+                <p class="home-text">Ever thrown out food just because you didn’t have time to eat and it
+                expired? Got a lot of leftovers and don’t know what to do?
+                Leaving home for a week and got lots of food in the refrigerator? DON’T throw it
+                away. Share it with CAP’NSHARE!</p>
+                
+            </div>
+            <div class="col-md-4x">
+                <h2>Browse</h2>
+                <p class="home-text"> Too much work and no time to cook? Looking to pick up a quick snack on the way to college? Look what people around you have shared from their kitchen and save a few bucks! </p>
+                
+            </div>
+            <div class="col-md-4x">
+                <h2>Donate</h2>
+                <p class="home-text"> Looking to donate food to shelters near you? Contact the food shelter you would like to donate the food items to and schedule a drop-off. </p>
+                
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="col-md-4x">
+                <p><%= link_to "Post an ad", "/foods/new", class: "btn btn-secondary" %></p>
+            </div>
+
+            <div class="col-md-4x">
+                <p><%= link_to "View all listings", "/foods", class: "btn btn-secondary" %></p>
+            </div>
+
+            <div class="col-md-4x">
+                <p><%= link_to "Explore shelters", "#", class: "btn btn-secondary" %></p>
+            </div>
+        </div>
+
+    </div>
+
+<% else %>
+
+        <div class="jumbotron jumbotron-home">
+            <div class="container">
+                <h1></h1>
+
+            </div>
+    </div>
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-4x">
+                <h2>Share</h2>
+                <p class="home-text">Ever thrown out food just because you didn’t have time to eat and it
+                expired? Got a lot of leftovers and don’t know what to do?
+                Leaving home for a week and got lots of food in the refrigerator? DON’T throw it
+                away. Share it with CAP’NSHARE!</p>
+                
+            </div>
+            <div class="col-md-4x">
+                <h2>Browse</h2>
+                <p class="home-text"> Too much work and no time to cook? Looking to pick up a quick snack on the way to college? Look what people around you have shared from their kitchen and save a few bucks! </p>
+                
+            </div>
+            <div class="col-md-4x">
+                <h2>Donate</h2>
+                <p class="home-text"> Looking to donate food to shelters near you? Contact the food shelter you would like to donate the food items to and schedule a drop-off. </p>
+                
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="col-md-4x">
+                <p><%= link_to "Post an ad", signin_path, class: "btn btn-secondary" %></p>
+            </div>
+
+            <div class="col-md-4x">
+                <p><%= link_to "View all listings", signin_path, class: "btn btn-secondary" %></p>
+            </div>
+
+            <div class="col-md-4x">
+                <p><%= link_to "Explore shelters", signin_path, class: "btn btn-secondary" %></p>
+            </div>
+        </div>
+
+    </div>
+    
+<% end %>

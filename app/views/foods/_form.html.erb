@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <%= form_for food do |f| %>
+            <div>
+                <p><b><%= f.label :name %></b></p>
+                <p><%= f.text_field :name %></p>
+            </div> 
+            <div>
+                <p><b><%= f.label :description %></b></p>
+                <p><%= f.text_area :description %></p>
+            </div> 
+            <div>
+                <p><b><%= f.label :image %></b></p>
+                <p><%= f.file_field :image %></p>
+            </div>
+            <div>
+                <p><b><%= f.label :contact %></b></p>
+                <p><%=  f.text_field :contact,:value => current_user.email, :readonly => true %></p>
+            </div> 
+            <%= f.submit "Add Listing", class: "btn btn-secondary" %>
+            <% end %>
+        </div>              
+    </div>
+</div>
