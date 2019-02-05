@@ -72,6 +72,7 @@ Rails.application.configure do
     domain:         'localhost:3000',
     address:        'smtp.gmail.com',
 
+    port:          '587’,
     authentication: :plain,
     enable_starttls_auto: true
   }
