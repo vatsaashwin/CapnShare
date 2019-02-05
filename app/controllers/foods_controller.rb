@@ -20,10 +20,11 @@ class FoodsController < ApplicationController
       if @food.save
         redirect_to food_path(@food.id)
         else
+        flash.now[:alert] = "Error in Food Posting, Posting cannot be saved,Image Size > 1 MB"
         render :new
       end  
     else 
-      flash[:notice] = "Error in Food Posting, Some Fields Missing"
+      flash.now[:alert] = "Error in Food Posting, Some Fields Missing"
       puts "Incorrect Posting, some fields missing"
       render :new
     end
