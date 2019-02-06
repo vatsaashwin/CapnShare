@@ -10,12 +10,14 @@ Rails.application.routes.draw do
   end
 
   get 'about' => 'pages#about'
-  get 'contactus' => 'pages#contactus'  
+  get 'contactus' => 'pages#contactus'
+  
   root :to =>   "pages#home"
   
   #Food Post Namespace
   resources :foods
-    root to: 'foods#index'  
+    root to: 'foods#index'
+    get :send_food_mail, to: 'foods#send_food_mail', as: :send_food_mail  
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

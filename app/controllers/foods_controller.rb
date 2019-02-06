@@ -13,6 +13,16 @@ class FoodsController < ApplicationController
  
   def show
   end
+
+  def send_food_mail
+    @food = Food.find(params[:id])
+    @current_user_email = current_user.email
+    @current_user_username = current_user.username    
+    FoodShare.food_request(@food,@current_user_email,@current_user_username).deliver
+    flash.now[:notice] = "Email has been sent to this Food Post User Succesfully"
+    flash.now[:notice] = "You are now one step away from tasting this delicious food"
+    redirect_to food_path(@food.id)
+  end
  
   def create
     @food = Food.new(food_params)
