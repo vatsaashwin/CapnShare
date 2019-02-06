@@ -71,8 +71,7 @@ Rails.application.configure do
     password:       'ENTER PASSWORD',
     domain:         'localhost:3000',
     address:        'smtp.gmail.com',
-
-    port:          '587’,
+    port:            587,
     authentication: :plain,
     enable_starttls_auto: true
   }
