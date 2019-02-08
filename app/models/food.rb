@@ -1,7 +1,7 @@
 class Food < ApplicationRecord	
     has_attached_file :image,
         url: ":s3_domain_url",
-        path: "/:class/",
+        path: "/:class/:id",
         #hash_secret: "ENTER HASH KEY",        
         styles: {
                     thumb: ["300x300", :jpeg],
