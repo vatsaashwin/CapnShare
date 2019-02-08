@@ -9,3 +9,12 @@
     background-size: cover;
 }
 
+.jumbotron-contactus {
+    background-image: url(image_path('contactus.jpg'));
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.25);
+    min-height: 350px;
+    
+}
