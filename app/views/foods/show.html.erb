@@ -2,11 +2,19 @@
     <div class="row">
         <div class="col-md-6">
             <%= link_to(image_tag(@food.image.url(:thumb)), @food.image.url, target: '_blank') if @food.image.exists? %>
-            <p><b>Item Name :</b><%= @food.name %></p>
-            <p><b>Description :</b><%= @food.description %></p>
+            <p><b>Item Name:</b><%= @food.name %></p>
+            <p><b>Description:</b><%= @food.description %></p>
+            <p><b>Expiry Date:</b><%= @food.expiry_date %></p>
             <!--p><b>Posted by :</b><%= @food.contact %></p-->
             <% if @food.contact != current_user.email%>
                 <p><%=link_to 'Interested', :controller => "foods",:action => "send_food_mail", :id => @food.id%></p>
+            <%else%>
+               <p>
+                    <%=link_to 'Edit', :controller => "foods",:action => "edit", :id => @food.id%>
+                    &nbsp
+                    &nbsp
+                    <%=link_to 'Delete', food_path(:id => @food.id), :method => :delete %>
+               </p>
             <%end%>
         </div>              
     </div>

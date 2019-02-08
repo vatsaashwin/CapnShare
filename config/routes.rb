@@ -17,7 +17,10 @@ Rails.application.routes.draw do
   #Food Post Namespace
   resources :foods
     root to: 'foods#index'
-    get :send_food_mail, to: 'foods#send_food_mail', as: :send_food_mail  
+    get :send_food_mail,  to: 'foods#send_food_mail', as: :send_food_mail  
+    get 'foods/:id/edit', to: 'foods#edit', as: :edit
+    patch 'foods/:id',    to: 'foods#update'
+    #delete 'food/:id',       to: 'foods#destroy'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
