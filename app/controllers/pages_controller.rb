@@ -14,6 +14,10 @@ class PagesController < ApplicationController
   end
 
   def home
+    if user_signed_in?
+      @current_user_email = current_user.email
+      @current_user_name = current_user.name     
+  end  
   end
   
   def index

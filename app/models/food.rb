@@ -3,7 +3,6 @@ class Food < ApplicationRecord
         url: "/system/:hash.:extension",
         hash_secret: "ENTER HASH KEY",
         
-
         styles: {
                     thumb: ["300x300", :jpeg],
                     original: [:jpeg]

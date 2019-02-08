@@ -13,6 +13,16 @@ class FoodsController < ApplicationController
  
   def show
   end
+
+  def send_food_mail
+    @food = Food.find(params[:id])
+    @current_user_email = current_user.email
+    @current_user_username = current_user.username    
+    FoodShare.food_request(@food,@current_user_email,@current_user_username).deliver
+    flash.now[:notice] = "Email has been sent to this Food Post User Succesfully"
+    flash.now[:notice] = "You are now one step away from tasting this delicious food"
+    redirect_to food_path(@food.id)
+  end
  
   def create
     @food = Food.new(food_params)
@@ -20,10 +30,11 @@ class FoodsController < ApplicationController
       if @food.save
         redirect_to food_path(@food.id)
         else
+        flash.now[:alert] = "Error in Food Posting, Posting cannot be saved,Image Size > 1 MB"
         render :new
       end  
     else 
-      flash[:notice] = "Error in Food Posting, Some Fields Missing"
+      flash.now[:alert] = "Error in Food Posting, Some Fields Missing"
       puts "Incorrect Posting, some fields missing"
       render :new
     end
