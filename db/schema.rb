@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2019_02_08_053910) do
+=======
 ActiveRecord::Schema.define(version: 2019_01_29_084948) do
+>>>>>>> 3f8d17aacd83383af2748e4ad2aa5bcdb056a301
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +29,40 @@ ActiveRecord::Schema.define(version: 2019_01_29_084948) do
     t.string "contact"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
+    t.string "expiry_date"
+  end
+
+  create_table "models", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_models_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_models_on_reset_password_token", unique: true
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.string "session_id", null: false
+    t.string "cas_ticket"
+    t.text "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cas_ticket"], name: "index_sessions_on_cas_ticket"
+    t.index ["session_id"], name: "index_sessions_on_session_id"
+    t.index ["updated_at"], name: "index_sessions_on_updated_at"
+=======
+>>>>>>> 3f8d17aacd83383af2748e4ad2aa5bcdb056a301
   end
 
   create_table "users", force: :cascade do |t|

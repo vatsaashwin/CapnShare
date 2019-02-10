@@ -39,8 +39,13 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.2.1'
 gem 'jquery-rails'
 
+#Date Picker
+gem 'bootstrap-datepicker-rails'
+
 #Image Rendering	
 gem "paperclip", "~> 5.1"
+#gem "aws-sdk-s3"
+gem 'aws-sdk', '< 3.0'
 
 #Devise Gem for Authentication
 gem 'devise'

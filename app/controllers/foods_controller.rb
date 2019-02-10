@@ -10,7 +10,25 @@ class FoodsController < ApplicationController
   def new
     @food = Food.new
   end
+    
+  def edit    
+    @food = Food.find(params[:id])
+  end
+
+  def update        
+    @food = Food.find(params[:id])
+    
+    @food.update(food_params)
+    flash.now[:alert] = "Food Post has been edited successfully"
+    redirect_to food_path(@food.id)
+  end 
  
+  def destroy  
+    @food = Food.find(params[:id])
+    @food.destroy    
+    redirect_to foods_path
+  end    
+  
   def show
   end
 
@@ -30,7 +48,7 @@ class FoodsController < ApplicationController
       if @food.save
         redirect_to food_path(@food.id)
         else
-        flash.now[:alert] = "Error in Food Posting, Posting cannot be saved,Image Size > 1 MB"
+        flash.now[:alert] = "Error in Food Posting, Posting cannot be saved,Image Size > 5 MB"
         render :new
       end  
     else 
@@ -39,14 +57,16 @@ class FoodsController < ApplicationController
       render :new
     end
   end  
-  private
+  #private
  
   def food_params
-    params.require(:food).permit(:name, :description, :image, :contact)
-
+    expiry_date = params[:expiry_date]
+    expiry_date.to_s.split('/').rotate(-1).reverse.join('/')
+    params.require(:food).permit(:name, :description, :image, :contact,:expiry_date)
   end
  
   def find_post
     @food = Food.find(params[:id])
   end
+
 end
