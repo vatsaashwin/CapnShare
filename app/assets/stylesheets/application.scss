@@ -26,13 +26,15 @@
     max-height:100%;
     background-color: rgba(255, 255, 255, 0.25);
     background-blend-mode: lighten;
-    padding-top: 10px;
+    padding: 0;
 }
 
-.jumbotron-home > .container {
+.jumbotron-home > div {
     background: image-url("home-bg2.jpg") no-repeat;
-    min-height: 650px;
-    height: 650px;
+    min-height: 700px;
+    height: 700px;
+    max-width: 100%;
+    width: 1555px;
 }
 
 .page-body {
