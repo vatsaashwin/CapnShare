@@ -34,4 +34,4 @@ Running on localhost:
        Hash_Secret can be generated using rails secret command 
 
 
-
+URL: http://capnshare.herokuapp.com
