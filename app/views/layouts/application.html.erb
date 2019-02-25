@@ -11,13 +11,22 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134603549-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-134603549-1');
+    </script>
   </head>
 
   <body>
 
     <!-- Navigation Bar -->
     <!-- <nav class="navbar navbar-toggleable-sm navbar-inverse bg-inverse"> -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
       <div class="container">
         <%= link_to "Cap'nShare", root_path, class: "navbar-brand" %>
         <ul class="navbar-nav">    
@@ -37,25 +46,27 @@
       </div>
     </nav>
 
-    <span class="success_msgs"> 
-      <% if notice %>
-        <p class="alert alert-success">
-          <%= notice %>
-        </p> 
-      <% end %> 
-    </span>
-
-    <span class="error_msgs"> 
-      <% if alert %>
-        <p class="alert alert-danger">
-          <%= alert%>
+    <div class="page-body">
+      <span class="success_msgs"> 
+        <% if notice %>
+          <p class="alert alert-success">
+            <%= notice %>
           </p> 
         <% end %> 
-    </span> 
-    
-    <!-- Page Content -->
-    <%= yield %>
-    
+      </span>
+
+      <span class="error_msgs"> 
+        <% if alert %>
+          <p class="alert alert-danger">
+            <%= alert%>
+            </p> 
+          <% end %> 
+      </span> 
+      
+      <!-- Page Content -->
+      <%= yield %>
+    </div>
+
     <!-- Footer -->
     <footer class="small text-muted">
       <div class="container">

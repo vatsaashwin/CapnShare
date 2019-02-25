@@ -1,3 +1,8 @@
-<li>
-  <b><%= link_to food.name, food_path(food.id) %></b>
-</li>
+<div class="card card-food shadow m-2">
+  <img class="card-img-top" src=<%= food.image.url %>>
+  <div class="card-body">
+    <h5 class="card-title"><%= food.name %></h5>
+    <p class="card-text"><%= food.description %></p>
+    <a href=<%=food_path(food.id)%> class="btn btn-primary">VIEW</a>
+  </div>
+</div>

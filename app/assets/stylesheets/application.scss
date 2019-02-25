@@ -24,12 +24,22 @@
     min-height: 650px;
     max-width:100%;
     max-height:100%;
-    background: image-url("home-bg2.jpg");
     background-color: rgba(255, 255, 255, 0.25);
     background-blend-mode: lighten;
-} 
+    padding: 0;
+}
 
+.jumbotron-home > div {
+    background: image-url("home-bg2.jpg") no-repeat;
+    min-height: 700px;
+    height: 700px;
+    max-width: 100%;
+    width: 1555px;
+}
 
+.page-body {
+    margin-top: 72px;
+}
 
 .col-md-4x {
     text-align: center;
@@ -41,4 +51,14 @@
 	text-align: justify !important;
     margin: 20px !important;
 
+}
+
+.card-food {
+    width: 18rem;
+    max-width: 18rem;
+    min-width: 18rem;
+}
+
+.card-food img {
+    height: 200px;
 }

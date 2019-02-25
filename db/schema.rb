@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_02_08_053910) do
-=======
-ActiveRecord::Schema.define(version: 2019_01_29_084948) do
->>>>>>> 3f8d17aacd83383af2748e4ad2aa5bcdb056a301
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +25,6 @@ ActiveRecord::Schema.define(version: 2019_01_29_084948) do
     t.string "contact"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
     t.string "expiry_date"
   end
 
@@ -61,8 +56,6 @@ ActiveRecord::Schema.define(version: 2019_01_29_084948) do
     t.index ["cas_ticket"], name: "index_sessions_on_cas_ticket"
     t.index ["session_id"], name: "index_sessions_on_session_id"
     t.index ["updated_at"], name: "index_sessions_on_updated_at"
-=======
->>>>>>> 3f8d17aacd83383af2748e4ad2aa5bcdb056a301
   end
 
   create_table "users", force: :cascade do |t|
