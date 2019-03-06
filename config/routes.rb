@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'donate/index'
   #Devise Gem for Authentication
   devise_for :users, :controllers => { registrations: 'registrations' }
   
@@ -22,5 +23,7 @@ Rails.application.routes.draw do
     patch 'foods/:id',    to: 'foods#update'
     #delete 'food/:id',       to: 'foods#destroy'
   
+  resources :donate
+    root to: 'donate#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
