@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     patch 'foods/:id',    to: 'foods#update'
     #delete 'food/:id',       to: 'foods#destroy'
   
-  resources :donate
-    root to: 'donate#index'
+  resources :donates
+    root to: 'donates#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

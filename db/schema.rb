@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_08_053910) do
+ActiveRecord::Schema.define(version: 2019_03_10_035206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "donates", force: :cascade do |t|
+    t.string "shelter_name"
+    t.string "shelter_address"
+    t.string "shelter_website"
+    t.string "shelter_contact"
+    t.string "shelter_email"
+  end
 
   create_table "foods", force: :cascade do |t|
     t.string "name"
