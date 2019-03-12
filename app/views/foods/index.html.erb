@@ -24,7 +24,13 @@
         </p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Interested</button>
+        <div class="user d-none">
+          <a href="" class="interested btn btn-primary">Interested</a>
+        </div>
+        <div class="owner d-none">
+          <a href="" data-method="delete" class="delete btn btn-danger mr-4">Delete</a>
+          <a href="" class="edit btn btn-primary">Edit</a>
+        </div>
       </div>
       <div class="modal-footer d-block py-1 alert-secondary">
         <div class="text-muted">
@@ -41,10 +47,23 @@
 <script>
     $("#viewFoodModal").on("show.bs.modal", function (e) {
         var button = e.relatedTarget;
+        var foodId = $(button).attr("data-food-id");
+        var foodContact = $(button).attr("data-food-contact");
         $("#viewFoodModal .modal-title").html($(button).attr("data-food-title"));
         $("#viewFoodModal .modal-body img").attr("src", $(button).attr("data-food-img"));
         $("#viewFoodModal .modal-body p").html($(button).attr("data-food-desc"));
-        $("#viewFoodModal .contact").html($(button).attr("data-food-contact"));
+        $("#viewFoodModal .contact").html(foodContact);
         $("#viewFoodModal .date").html($(button).attr("data-food-date"));
+        $("#viewFoodModal a.interested").attr("href", "/send_food_mail?id=" + foodId);
+        $("#viewFoodModal a.delete").attr("href", "/foods/" + foodId);
+        $("#viewFoodModal a.edit").attr("href", "/foods/" + foodId + "/edit");
+
+        $("#viewFoodModal .user").addClass("d-none");
+        $("#viewFoodModal .owner").addClass("d-none");
+        if ("<%= @current_user_email%>" === foodContact) {
+          $("#viewFoodModal .owner").removeClass("d-none");
+        } else {
+          $("#viewFoodModal .user").removeClass("d-none");
+        }
     })
 </script>

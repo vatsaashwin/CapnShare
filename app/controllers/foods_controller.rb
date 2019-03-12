@@ -5,6 +5,7 @@ class FoodsController < ApplicationController
 
   def index
     @foods = Food.order('created_at DESC')
+    @current_user_email = current_user.email
   end
  
   def new
