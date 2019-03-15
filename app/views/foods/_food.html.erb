@@ -3,6 +3,16 @@
   <div class="card-body">
     <h5 class="card-title"><%= food.name %></h5>
     <p class="card-text"><%= food.description %></p>
-    <a href=<%=food_path(food.id)%> class="btn btn-primary">VIEW</a>
+    <button type="button" class="btn btn-primary"
+            data-toggle="modal" data-target="#viewFoodModal"
+            data-backdrop="static" data-keyboard="false"
+            data-food-id="<%= food.id %>"
+            data-food-title="<%= food.name %>"
+            data-food-desc="<%= food.description %>"
+            data-food-img="<%= food.image.url %>"
+            data-food-contact="<%= food.contact %>"
+            data-food-date="<%= food.expiry_date %>">
+      VIEW
+    </button>
   </div>
 </div>

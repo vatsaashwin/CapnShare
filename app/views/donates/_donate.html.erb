@@ -1,0 +1,11 @@
+<div class="card">
+  <h5 class="card-header"><b><%= donate.shelter_name %></b></h5>
+  <div class="card-body">
+    <h5 class="card-title"><%= donate.shelter_contact %></h5>
+    <p class="card-text"><%= donate.shelter_address %></p>
+    <% if donate.shelter_website != ""%>
+      <a href=<%= donate.shelter_website %> class="btn btn-primary">WEBSITE</a>
+    <%end%>
+  </div>
+</div>
+

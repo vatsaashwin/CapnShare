@@ -12,7 +12,7 @@
             </div>
             <div>
                 <p><b><%= f.label :ExpiryDate %></b></p>
-                <p><%= f.text_field :expiry_date, data:{provide:'datepicker'},:value => Date.today %></p>
+                <p><%= f.text_field :expiry_date, data:{provide:'datepicker'}%></p>
             </div> 
             <div>
                 <p><b><%= f.label :image %></b></p>
@@ -22,7 +22,7 @@
                 <p><b><%= f.label :contact %></b></p>
                 <p><%=  f.text_field :contact,:value => current_user.email, :readonly => true %></p>
             </div> 
-            <%= f.submit "Add Listing", class: "btn btn-secondary" %>
+            <%= f.submit "Add Food Listing", class: "btn btn-secondary" %>
             <% end %>
         </div>              
     </div>

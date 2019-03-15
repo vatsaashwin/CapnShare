@@ -13,12 +13,12 @@ class Food < ApplicationRecord
                 },
         storage: :s3,
         s3_credentials: {
-                    access_key_id: "ENTER ID HERE",
-                    secret_access_key: "ENTER KEY HERE",
-                    bucket: "ENTER BUCKET NAME HERE",
-                    host_name: "ENTER HOST NAME HERE"
+                    access_key_id: "",
+                    secret_access_key: "",
+                    bucket: "",
+                    host_name: ""
                 },
-        s3_region: "ENTER REGION HERE"
+        s3_region: ""
         #s3_permissions: "public"
 
     validates_attachment :image,
